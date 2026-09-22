@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality Atelier | Feraz</title>
+    
+    <style>
+        @font-face {
+            font-family: 'HK Grotesk';
+            src: url('https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/HKGrotesk-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'HK Grotesk';
+            src: url('https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/HKGrotesk-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Zilla Slab';
+            src: url('https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/ZillaSlab-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'HK Grotesk', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            overflow-x: clip;
+        }
+
+        .atelier-container {
+            width: 100%;
+            max-width: 375px;
+            background: #111111;
+            position: relative;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 640px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-logo {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 67px;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 30px;
+            left: 24px;
+            right: 24px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .btn-iniciar {
+            display: inline-block;
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: normal;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 2px;
+        }
+
+        .content-body {
+            padding: 24px 20px;
+            position: relative;
+        }
+
+        .section-title-serif {
+            font-family: 'Zilla Slab', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            color: #f0efe9;
+        }
+
+        .promise-text {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #b3b2ad;
+            margin-bottom: 16px;
+        }
+
+        .promise-icon {
+            width: 25px;
+            height: 25px;
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        .atelier-header-block {
+            border-top: 1px solid #333;
+            padding-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .hotel-header-logo-container {
+            width: 120px;
+            height: 30px;
+            margin-bottom: 16px;
+        }
+
+        .hotel-header-logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: left;
+        }
+
+        .rooms-line {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            margin-bottom: 16px;
+            color: #b3b2ad;
+        }
+
+        .rooms-input {
+            width: 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #666;
+            color: #fff;
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 11px;
+            text-align: center;
+            outline: none;
+            padding: 0;
+        }
+
+        .rooms-input::-webkit-outer-spin-button,
+        .rooms-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .rooms-input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .atelier-desc {
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #b3b2ad;
+            margin-bottom: 16px;
+        }
+
+        .notes-small {
+            font-size: 9px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .services-wrapper {
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+
+        .category-block {
+            margin-bottom: 32px;
+            border-top: 1px solid #222;
+            padding-top: 16px;
+        }
+
+        .culinary-header-grid {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .culinary-title-side {
+            border-left: 2px solid #c5a059;
+            padding-left: 10px;
+        }
+
+        .culinary-main-title {
+            font-family: 'Zilla Slab', serif;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .culinary-desc-side {
+            flex: 1;
+            font-family: 'Zilla Slab', serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #e0ded6;
+        }
+
+        .culinary-features {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            font-weight: 600;
+            color: #c5a059;
+            margin-bottom: 20px;
+            padding-top: 4px;
+        }
+
+        .category-main-title {
+            font-family: 'Zilla Slab', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .category-type-tag {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #c5a059;
+            margin-bottom: 8px;
+        }
+
+        .category-subtext {
+            font-size: 10px;
+            font-weight: 600;
+            color: #b3b2ad;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .service-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-info {
+            flex: 1;
+            padding-right: 12px;
+        }
+
+        .service-title {
+            font-family: 'Zilla Slab', serif;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .service-desc {
+            font-size: 9px;
+            font-weight: 600;
+            color: #888;
+            line-height: 1.3;
+        }
+
+        .service-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-price {
+            font-size: 11px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-price.included {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .included-tag {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #c5a059;
+            display: none;
+        }
+
+        .included-tag.visible {
+            display: inline-block;
+        }
+
+        input[type="checkbox"].calc-item {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #666;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        input[type="checkbox"].calc-item:checked {
+            border-color: #fff;
+            background-image: url('https://github.com/feraz-studio/feraz-assets/blob/main/Gradient.png?raw=true');
+        }
+
+        .category-legend {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            font-family: 'HK Grotesk', sans-serif;
+            color: #ffffff;
+            opacity: 0.6;
+            margin-top: 10px;
+        }
+
+        .legend-right-align {
+            margin-left: auto;
+        }
+
+        .sets-banner-container {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .sets-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sets-banner-title {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            transform: translateY(-50%);
+            font-family: 'Zilla Slab', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .sets-banner-subtitle {
+            position: absolute;
+            top: 65%;
+            left: 16px;
+            transform: translateY(-50%);
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .set-card {
+            border: 1px solid #333;
+            padding: 14px;
+            margin-bottom: 16px;
+            background: #151515;
+            font-family: 'HK Grotesk', sans-serif;
+        }
+
+        .set-card-header {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #c5a059;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .set-item-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #b3b2ad;
+            padding: 4px 0;
+            font-family: 'HK Grotesk', sans-serif;
+        }
+
+        .set-footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #333;
+            margin-top: 8px;
+            padding-top: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: 'HK Grotesk', sans-serif;
+        }
+
+        .crossed-price {
+            color: rgba(197, 160, 89, 0.7);
+            text-decoration: line-through;
+            font-family: 'HK Grotesk', sans-serif;
+        }
+
+        /* BARRA STICKY */
+        .sticky-pill-bar {
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: 20px;
+            width: 100%;
+            max-width: 335px;
+            height: 65px;
+            border: 1px solid #444;
+            border-radius: 32.5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 24px;
+            margin: 0 auto 32px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .sticky-pill-bar.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .pill-bg {
+            position: absolute;
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            z-index: 0;
+        }
+
+        .pill-bg.active {
+            opacity: 1;
+        }
+
+        .pill-price-text {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .pill-price-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .total-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .total-label {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+            line-height: 1;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .total-value {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* SECCIÓN CHECKOUT / COTIZACIÓN */
+        .checkout-box {
+            padding-top: 20px;
+            padding-bottom: 0px; 
+            scroll-margin-top: 120px;
+        }
+
+        .checkout-header-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .checkout-logo-container {
+            width: 120px;
+            height: 30px;
+        }
+
+        .checkout-logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: right;
+        }
+
+        .checkout-summary-list {
+            list-style: none;
+            transition: padding 1.5s ease, margin 1.5s ease;
+            border-top: 0 solid #222;
+        }
+        
+        .checkout-summary-list.has-items {
+            border-top: 1px solid #222;
+            padding-top: 16px;
+            margin-top: 24px;
+        }
+
+        .checkout-summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            opacity: 0;
+            max-height: 0;
+            padding: 0 0;
+            margin: 0;
+            border-bottom: 0 solid #222;
+            overflow: hidden;
+            transition: max-height 1.5s ease, opacity 1.5s ease, padding 1.5s ease, border-width 1.5s ease;
+        }
+
+        .checkout-summary-item.show {
+            opacity: 1;
+            max-height: 150px; 
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .summary-left {
+            display: flex;
+            gap: 12px;
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .summary-dot {
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .summary-text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .summary-name {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .summary-format-tag {
+            font-size: 8px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #c5a059;
+            margin-left: 6px;
+            font-weight: 700;
+        }
+
+        .summary-desc {
+            font-size: 9px;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .summary-price {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .checkout-action-wrapper {
+            position: relative;
+            margin: 16px 0 25px 0;
+        }
+
+        .btn-checkout-dynamic {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 20px;
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            transition: background-color 1.5s ease, color 1.5s ease;
+        }
+
+        .btn-checkout-dynamic::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 24px;
+            right: 24px;
+            height: 1px;
+            background-color: #ffffff;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            pointer-events: none;
+        }
+
+        .btn-checkout-dynamic.active {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .btn-checkout-dynamic.active::after {
+            opacity: 1;
+        }
+
+        .expandable-form {
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: max-height 1.8s cubic-bezier(0.25, 1, 0.3, 1), 
+                        opacity 1.8s ease, 
+                        transform 1.8s cubic-bezier(0.25, 1, 0.3, 1),
+                        padding-bottom 1.8s ease;
+        }
+
+        .expandable-form.expanded {
+            max-height: 400px;
+            opacity: 1;
+            transform: translateY(0);
+            padding-bottom: 40px;
+        }
+
+        .expandable-form.closing {
+            transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease, padding-bottom 0.5s ease !important;
+        }
+
+        .client-input-grey {
+            width: 100%;
+            background: #e5e5e5;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 16px;
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 11px;
+            color: #111;
+            outline: none;
+        }
+
+        .client-input-grey::placeholder {
+            color: #666;
+        }
+
+        .submit-checkout-btn {
+            background: #111;
+            color: #fff;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 12px 20px;
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: fit-content;
+        }
+
+        .submit-icon {
+            width: 12px;
+            height: 12px;
+            fill: #ffffff;
+        }
+
+        .temi-block {
+            margin-bottom: 10px; /* Reducido al máximo solicitado antes de la sección de contacto */
+            padding-bottom: 0px;
+        }
+        
+        .temi-body-text {
+            font-size: 11px;
+            font-weight: 600;
+            color: #e0ded6;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .temi-list {
+            list-style: none;
+            font-size: 10px;
+            font-weight: 600;
+            color: #b3b2ad;
+            line-height: 2.2;
+            margin-bottom: 0;
+        }
+
+        /* SECCIÓN CONTACTO DIRECTO (SIN DEGRADADO, CAMBIO DE COLOR SEAMLESS) */
+        .contact-section-light {
+            background-color: #FAF9F6;
+            color: #000000;
+            padding: 24px 20px 20px 20px; /* Sin degradado, unión perfecta */
+            font-family: 'HK Grotesk', sans-serif;
+        }
+
+        .contact-header-title {
+            font-family: 'HK Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: normal;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+
+        .contact-body-text {
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #333333;
+            margin-bottom: 24px;
+        }
+
+        .contact-info-block {
+            font-size: 11px;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .contact-info-block strong {
+            font-weight: 700;
+        }
+
+        .contact-info-block a {
+            color: #000000;
+            text-decoration: underline; /* Teléfono y correo subrayados */
+        }
+
+        /* FOOTER CHAPARRITO UNIFORME */
+        .footer-bar {
+            height: 75px;
+            background-color: #FAF9F6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px 20px 20px;
+        }
+
+        .footer-logo {
+            width: 60px;
+            height: auto;
+            filter: brightness(0);
+        }
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .social-icon {
+            width: 18px;
+            height: 18px;
+            fill: #000000;
+            transition: opacity 0.2s;
+        }
+
+        .social-icon:hover {
+            opacity: 0.7;
+        }
+
+        .globe-icon-img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            filter: brightness(0);
+            transition: opacity 0.2s;
+        }
+
+        .globe-icon-img:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="atelier-container">
+    
+    <div class="hero-section">
+        <img src="https://github.com/feraz-studio/feraz-assets/blob/main/Portada%201.png?raw=true" alt="Feraz Hospitality Atelier" class="hero-image">
+        <img src="https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/Feraz_Off%20white.svg" alt="Feraz" class="hero-logo">
+        <div class="hero-content">
+            <h1 class="hero-title">Hospitality Atelier</h1>
+            <a href="#atelier-header" class="btn-iniciar" id="btnIniciar">Iniciar</a>
+        </div>
+    </div>
+
+    <div class="content-body">
+        
+        <div class="section-title-serif">Nuestra Promesa</div>
+        <p class="promise-text">
+            En Feraz, pretendemos que tanto usted como todo el personal de la propiedad, reciba la atención de una empresa de hospitalidad de clase mundial.<br><br>
+            Nuestro objetivo es facilitar el cuidado y sorpresa de sus huéspedes durante su estancia con la menor fricción posible de manera ágil, eficiente, y con la calidad que nos caracteriza.
+        </p>
+        <img src="https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/Outline_Off%20white.svg" alt="Icono Feraz" class="promise-icon">
+
+        <div class="atelier-header-block" id="atelier-header">
+            <div class="hotel-header-logo-container">
+                <img src="https://github.com/feraz-studio/feraz-assets/blob/main/OctaviaCasa.png?raw=true" alt="Octavia Casa">
+            </div>
+
+            <div class="rooms-line">
+                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" id="rooms-count-top" class="rooms-input" value="20" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+                <span>habitaciones.</span>
+            </div>
+            <p class="atelier-desc">
+                Le damos la bienvenida a nuestro atelier, aquí podrá configurar el conjunto de servicios que mejor se adapte a las necesidades y objetivos actuales de su propiedad.<br><br>
+                Esperamos que lo encuentre de utilidad e invite a emocionarle tanto como a nosotros el realizar proyectos de experiencia de huéspedes.
+            </p>
+            <p class="atelier-desc">
+                Todos nuestros servicios se cotizan de forma fija por habitación por mes basándose en un 60% de ocupación promedio.<br>
+                A mayor porcentaje de ocupación, mayor ahorro para el hotel.
+            </p>
+            <div class="notes-small">Precios no incluyen IVA</div>
+        </div>
+
+        <div class="services-wrapper">
+
+            <!-- CHECK-IN -->
+            <div class="category-block" id="checkin-section">
+                <div class="culinary-header-grid">
+                    <div class="culinary-title-side">
+                        <div class="culinary-main-title">DISEÑO<br>CULINARIO</div>
+                    </div>
+                    <div class="culinary-desc-side">
+                        Una colección culinaria personalizada.<br>Exclusiva, para siempre.
+                    </div>
+                </div>
+                <div class="culinary-features">
+                    <span>• Entrega semanal</span>
+                    <span>• Suministro según ocupación + 10% adicional</span>
+                </div>
+
+                <div class="category-type-tag">Check-in</div>
+                <div class="category-subtext">Cree un recibimiento cálido para sus huéspedes con 2 piezas de diseño culinario que los conecten inmediatamente con la identidad de su hotel.</div>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Base</div>
+                        <div class="service-desc">Mazapanes (cacahuate), trufas, pâte de fruit, toffees.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 375</span>
+                        <input type="checkbox" class="calc-item checkin-exclusive" value="375" data-name="Check-in Base" data-desc="Mazapanes (cacahuate), trufas, pâte de fruit, toffees." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Firma</div>
+                        <div class="service-desc">Bombones, confitería boutique + colecciones / temporada.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 590</span>
+                        <input type="checkbox" class="calc-item checkin-exclusive" value="590" data-name="Check-in Firma" data-desc="Bombones, confitería boutique + colecciones / temporada." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+
+                <label class="service-row" id="magno-checkin-row">
+                    <div class="service-info">
+                        <div class="service-title">Magno</div>
+                        <div class="service-desc">El despliegue completo de colecciones y hasta 6 recetas simultáneas en rotación.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 780</span>
+                        <input type="checkbox" class="calc-item checkin-exclusive" value="780" data-name="Check-in Magno" data-desc="El despliegue completo de colecciones y hasta 6 recetas simultáneas en rotación." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+                <div class="category-legend" id="checkin-end-marker">
+                    <span>Incl. 2 piezas por servicio</span>
+                    <span>MXN / Habitación / Mes</span>
+                </div>
+            </div>
+
+            <!-- TURNDOWN SERVICE -->
+            <div class="category-block" id="turndown-section">
+                <div class="category-type-tag">Turndown Service</div>
+                <div class="category-subtext">Nuestras piezas diseñadas para hora de dormir son una invitación al descanso y preparan mentalmente al huésped para una noche de relajación.</div>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Base</div>
+                        <div class="service-desc">Mazapanes (cacahuate), trufas, pâte de fruit, toffees.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 750</span>
+                        <input type="checkbox" class="calc-item turndown-exclusive" value="750" data-name="Turndown Base" data-desc="Mazapanes (cacahuate), trufas, pâte de fruit, toffees." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Firma</div>
+                        <div class="service-desc">Bombones, confitería boutique + colecciones / temporada.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 1,180</span>
+                        <input type="checkbox" class="calc-item turndown-exclusive" value="1180" data-name="Turndown Firma" data-desc="Bombones, confitería boutique + colecciones / temporada." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Magno</div>
+                        <div class="service-desc">El despliegue completo de colecciones y hasta 6 recetas simultáneas en rotación.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 1,560</span>
+                        <input type="checkbox" class="calc-item turndown-exclusive" value="1560" data-name="Turndown Magno" data-desc="El despliegue completo de colecciones y hasta 6 recetas simultáneas en rotación." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+                <div class="category-legend" id="turndown-end-marker">
+                    <span>Incl. 2 piezas por noche</span>
+                    <span>MXN / Habitación / Mes</span>
+                </div>
+            </div>
+
+            <!-- EDITORIAL Y SOPORTE -->
+            <div class="category-block" id="editorial-section">
+                <div class="category-main-title">Editorial y Soporte</div>
+                <div class="category-subtext">Elementos de diseño y papelería creativa para reforzar la experiencia sensorial en su hotel.</div>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Vajilla permanente</div>
+                        <div class="service-desc">2.5x número de habitaciones piezas. Reemplazo por roturas.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 200</span>
+                        <input type="checkbox" class="calc-item" value="200" data-name="Vajilla permanente" data-desc="2.5x número de habitaciones piezas. Reemplazo por roturas." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Vajilla WASARA</div>
+                        <div class="service-desc">Desechable compostable.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 280</span>
+                        <input type="checkbox" class="calc-item" value="280" data-name="Vajilla WASARA" data-desc="Desechable compostable." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Papelería premium</div>
+                        <div class="service-desc">Bilingüe, papel brillante o de algodón.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 45</span>
+                        <input type="checkbox" class="calc-item" value="45" data-name="Papelería premium" data-desc="Bilingüe, papel brillante o de algodón." data-format="Servicio individual" data-type="room">
+                    </div>
+                </label>
+                <div class="category-legend">
+                    <span class="legend-right-align">MXN / Habitación / Mes</span>
+                </div>
+            </div>
+
+            <!-- DIGITAL Y CONTENIDO -->
+            <div class="category-block" id="digital-section">
+                <div class="category-main-title">Digital y Contenido</div>
+                <div class="category-subtext">Una extensión de su colección para dispositivos móviles y contenido en redes sociales.</div>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Experiencia digital</div>
+                        <div class="service-desc">Página web personalizada.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="included-tag" id="exp-digital-tag">Incluido</span>
+                        <span class="service-price" id="exp-digital-price">$ 420</span>
+                        <input type="checkbox" class="calc-item" id="chk-exp-digital" value="420" data-name="Experiencia digital" data-desc="Página web personalizada." data-format="Servicio individual" data-type="fixed">
+                    </div>
+                </label>
+
+                <label class="service-row">
+                    <div class="service-info">
+                        <div class="service-title">Creación de contenido mensual</div>
+                        <div class="service-desc">Foto + Video profesional, review booster, experiencia digital.</div>
+                    </div>
+                    <div class="service-right">
+                        <span class="service-price">$ 3,500</span>
+                        <input type="checkbox" class="calc-item" id="chk-contenido-mensual" value="3500" data-name="Creación de contenido mensual" data-desc="Foto + Video profesional, review booster, experiencia digital." data-format="Paquete" data-type="fixed">
+                    </div>
+                </label>
+                <div class="category-legend">
+                    <span class="legend-right-align">MXN / Mes</span>
+                </div>
+            </div>
+
+            <!-- SECCIÓN SETS -->
+            <div class="category-block" id="sets-section">
+                <div class="sets-banner-container">
+                    <div class="sets-banner-title">Sets</div>
+                    <img src="https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/SETS.png" alt="Sets" class="sets-banner-img">
+                </div>
+
+                <div class="set-card">
+                    <div class="set-card-header">Check-in</div>
+                    <div class="set-item-row"><span>Diseño Culinario (Base)</span><span>$ 375</span></div>
+                    <div class="set-item-row"><span>Vajilla permanente</span><span>$ 200</span></div>
+                    <div class="set-item-row"><span>Papelería creativa</span><span>$ 45</span></div>
+                    <div class="set-footer-row">
+                        <span class="crossed-price">$ 620</span>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span>$ 590</span>
+                            <input type="checkbox" class="calc-item set-exclusive" value="590" data-name="Set Check-in" data-desc="Diseño Culinario (Base) + Vajilla permanente + Papelería creativa" data-format="Paquete" data-type="room">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="set-card">
+                    <div class="set-card-header">Turndown Service</div>
+                    <div class="set-item-row"><span>Diseño Culinario (Firma)</span><span>$ 1,180</span></div>
+                    <div class="set-item-row"><span>Vajilla permanente</span><span>$ 200</span></div>
+                    <div class="set-item-row"><span>Papelería creativa</span><span>$ 45</span></div>
+                    <div class="set-footer-row">
+                        <span class="crossed-price">$ 1,425</span>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span>$ 1,350</span>
+                            <input type="checkbox" class="calc-item set-exclusive" value="1350" data-name="Set Turndown Service" data-desc="Diseño Culinario (Firma) + Vajilla permanente + Papelería creativa" data-format="Paquete" data-type="room">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="set-card">
+                    <div class="set-card-header">Ambos</div>
+                    <div class="set-item-row"><span>Diseño Culinario (Firma)</span><span>$ 1,770</span></div>
+                    <div class="set-item-row"><span>Vajilla permanente (2)</span><span>$ 400</span></div>
+                    <div class="set-item-row"><span>Papelería creativa (2)</span><span>$ 90</span></div>
+                    <div class="set-footer-row">
+                        <span class="crossed-price">$ 2,260</span>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span>$ 2,050</span>
+                            <input type="checkbox" class="calc-item set-exclusive" value="2050" data-name="Set Ambos" data-desc="Diseño Culinario (Firma) + Vajilla permanente (2) + Papelería creativa (2)" data-format="Paquete" data-type="room">
+                        </div>
+                    </div>
+                </div>
+                <div class="category-legend">
+                    <span class="legend-right-align">MXN / Habitación / Mes</span>
+                </div>
+            </div>
+
+            <!-- BARRA STICKY -->
+            <div class="sticky-pill-bar" id="stickyPill">
+                <div class="pill-bg active" id="bg-checkin" title="Fondo Check-in" style="background-image: url('https://github.com/feraz-studio/feraz-assets/blob/main/Barra%201.png?raw=true')"></div>
+                <div class="pill-bg" id="bg-turndown" title="Fondo Turndown Service" style="background-image: url('https://github.com/feraz-studio/feraz-assets/blob/main/Barra%203.png?raw=true')"></div>
+                <div class="pill-bg" id="bg-editorial" title="Fondo Editorial y Soporte" style="background-image: url('https://github.com/feraz-studio/feraz-assets/blob/main/Barra%202.png?raw=true')"></div>
+                <div class="pill-bg" id="bg-digital" title="Fondo Digital y Contenido" style="background-image: url('https://github.com/feraz-studio/feraz-assets/blob/main/Barra%205.png?raw=true')"></div>
+                <div class="pill-bg" id="bg-sets" title="Fondo Sets" style="background-image: url('https://github.com/feraz-studio/feraz-assets/blob/main/Barra%206.png?raw=true')"></div>
+                
+                <div class="pill-price-text" id="priceContainer">
+                    <div class="total-group">
+                        <div class="total-label">TOTAL</div>
+                        <div class="total-value">MXN <span id="total-amount">0</span> / mes</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN CHECKOUT -->
+        <div class="checkout-box" id="contacto-section">
+            
+            <div class="checkout-header-grid">
+                <div class="category-main-title">RESUMEN</div>
+                <div class="checkout-logo-container">
+                    <img src="https://github.com/feraz-studio/feraz-assets/blob/main/OctaviaCasa.png?raw=true" alt="Octavia Casa">
+                </div>
+            </div>
+
+            <p class="atelier-desc">Un diseño concebido para trascender. Cada elemento de esta colección será curado meticulosamente para entrelazarse con la narrativa de su hotel, elevando el arte de la hospitalidad a una experiencia sensorial integral.</p>
+
+            <ul class="checkout-summary-list" id="checkout-summary-list">
+                <!-- Items se agregan dinámicamente -->
+            </ul>
+
+            <div class="checkout-action-wrapper" id="actionWrapper">
+                <button class="btn-checkout-dynamic" id="btn-toggle-checkout">Obtener cotización</button>
+            </div>
+
+            <div class="expandable-form" id="expandable-checkout-form">
+                <p class="atelier-desc" style="color:#c5a059;">En menos de 72 horas, prepararemos un concepto alineado a su selección, sirviendo como punto de partida tangible antes de su compromiso final.</p>
+                <input type="text" id="client-name" class="client-input-grey" placeholder="Nombre y apellido" required>
+                <input type="email" id="client-email" class="client-input-grey" placeholder="Correo electrónico" required>
+                <button class="submit-checkout-btn" id="send-btn">
+                    Enviar 
+                    <svg class="submit-icon" viewBox="0 0 24 24"><path d="M17 12L7 2v20z"/></svg>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN TEMI -->
+        <div class="temi-block">
+            <div class="sets-banner-container" style="margin-bottom: 24px;">
+                <div class="sets-banner-title" style="top: 35%;">TEMI</div>
+                <div class="sets-banner-subtitle" style="top: 65%;">El sueño hecho visión</div>
+                <img src="https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/Barra%20temi.png" alt="Temi Banner" class="sets-banner-img">
+            </div>
+            <p class="temi-body-text">Cualquier proyecto que imaginen para su propiedad, podemos materializarlo.</p>
+            <ul class="temi-list">
+                <li>Rituales wellness</li>
+                <li>Experiencias para huéspedes</li>
+                <li>Papelería creativa y packaging</li>
+                <li>Honesty bar</li>
+                <li>Diseño gráfico y web</li>
+                <li>Creación de contenido y dirección de arte</li>
+                <li>Amenidades VIP y piezas coleccionables</li>
+                <li>Eventos y bebidas</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SECCIÓN CONTACTO DIRECTO (SIN DEGRADADO) -->
+    <div class="contact-section-light">
+        <div class="contact-header-title">CONTACTO</div>
+        <p class="contact-body-text">
+            Agradecemos enormemente el tiempo que ha dedicado a conocer Feraz. Si desea obtener asistencia personalizada, puede contactarnos por los siguientes medios. Obtendrá una respuesta inmediatamente.
+        </p>
+        <div class="contact-info-block">
+            <strong>Fernando Quezada</strong><br>
+            Founder & Creative Director<br>
+            <a href="https://wa.me/525549400957" target="_blank">55 4940 0957</a><br>
+            <a href="mailto:collabs@feraz.studio">collabs@feraz.studio</a>
+        </div>
+    </div>
+
+    <!-- FOOTER MÍNIMO CON LOGO E ÍCONOS SOCIALES -->
+    <footer class="footer-bar">
+        <img src="https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/Feraz_Off%20white.svg" alt="Feraz Logo" class="footer-logo">
+        <div class="footer-socials">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/feraz.cdmx/" target="_blank" title="Instagram">
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <!-- Globe con imagen oficial -->
+            <a href="https://feraz.studio" target="_blank" title="Sitio Web">
+                <img src="https://raw.githubusercontent.com/feraz-studio/feraz-assets/main/globe.png" alt="Globe Icon" class="globe-icon-img">
+            </a>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById('btnIniciar').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('atelier-header').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const checkboxes = document.querySelectorAll('.calc-item');
+    const checkinBoxes = document.querySelectorAll('.checkin-exclusive');
+    const turndownBoxes = document.querySelectorAll('.turndown-exclusive');
+    const setBoxes = document.querySelectorAll('.set-exclusive');
+    
+    const roomsInputTop = document.getElementById('rooms-count-top');
+    const totalAmountSpan = document.getElementById('total-amount');
+    const summaryList = document.getElementById('checkout-summary-list');
+    
+    const stickyPill = document.getElementById('stickyPill');
+    const priceContainer = document.getElementById('priceContainer');
+    const magnoRow = document.getElementById('magno-checkin-row');
+
+    const chkContenido = document.getElementById('chk-contenido-mensual');
+    const chkExpDigital = document.getElementById('chk-exp-digital');
+    const expDigitalPrice = document.getElementById('exp-digital-price');
+    const expDigitalTag = document.getElementById('exp-digital-tag');
+
+    roomsInputTop.addEventListener('input', calculateTotal);
+
+    chkContenido.addEventListener('change', () => {
+        if (chkContenido.checked) {
+            chkExpDigital.checked = true;
+            expDigitalPrice.classList.add('included');
+            expDigitalTag.classList.add('visible');
+        } else {
+            chkExpDigital.checked = false;
+            expDigitalPrice.classList.remove('included');
+            expDigitalTag.classList.remove('visible');
+        }
+        calculateTotal();
+    });
+
+    chkExpDigital.addEventListener('change', () => {
+        if (!chkExpDigital.checked && chkContenido.checked) {
+            chkContenido.checked = false;
+            expDigitalPrice.classList.remove('included');
+            expDigitalTag.classList.remove('visible');
+        }
+        calculateTotal();
+    });
+
+    function handleExclusive(group, currentBox) {
+        if (currentBox.checked) {
+            group.forEach(other => {
+                if (other !== currentBox) other.checked = false;
+            });
+        }
+        calculateTotal();
+    }
+
+    checkinBoxes.forEach(box => box.addEventListener('change', () => handleExclusive(checkinBoxes, box)));
+    turndownBoxes.forEach(box => box.addEventListener('change', () => handleExclusive(turndownBoxes, box)));
+    setBoxes.forEach(box => box.addEventListener('change', () => handleExclusive(setBoxes, box)));
+
+    function calculateTotal() {
+        let roomsCostSum = 0;
+        let fixedCostSum = 0;
+        let activeCount = 0;
+        let activeItemIds = [];
+
+        checkboxes.forEach(box => {
+            if (box.checked) {
+                activeCount++;
+                
+                let price = parseInt(box.value);
+                if (box === chkExpDigital && chkContenido.checked) {
+                    price = 0;
+                }
+                
+                if (box.getAttribute('data-type') === 'room') {
+                    roomsCostSum += price;
+                } else {
+                    fixedCostSum += price;
+                }
+
+                const name = box.getAttribute('data-name');
+                const itemId = 'summary-item-' + name.replace(/\s+/g, '-');
+                activeItemIds.push(itemId);
+                let li = document.getElementById(itemId);
+
+                if (!li) {
+                    const desc = box.getAttribute('data-desc');
+                    const format = box.getAttribute('data-format');
+                    const priceFormatted = price.toLocaleString('es-MX');
+
+                    li = document.createElement('li');
+                    li.id = itemId;
+                    li.className = 'checkout-summary-item';
+                    li.innerHTML = `
+                        <div class="summary-left">
+                            <span class="summary-dot">•</span>
+                            <div class="summary-text-block">
+                                <span class="summary-name">${name} <span class="summary-format-tag">[${format}]</span></span>
+                                <span class="summary-desc">${desc}</span>
+                            </div>
+                        </div>
+                        <div class="summary-price">$ ${priceFormatted}</div>
+                    `;
+                    summaryList.appendChild(li);
+                    
+                    void li.offsetWidth;
+                } else {
+                    const priceFormatted = price.toLocaleString('es-MX');
+                    li.querySelector('.summary-price').textContent = `$ ${priceFormatted}`;
+                }
+                
+                li.classList.add('show');
+            }
+        });
+        
+        Array.from(summaryList.children).forEach(li => {
+            if (!activeItemIds.includes(li.id)) {
+                li.classList.remove('show');
+            }
+        });
+        
+        if (activeCount > 0) {
+            summaryList.classList.add('has-items');
+        } else {
+            summaryList.classList.remove('has-items');
+        }
+
+        const rooms = parseInt(roomsInputTop.value) || 0;
+        const grandTotal = (roomsCostSum * rooms) + fixedCostSum;
+        totalAmountSpan.textContent = grandTotal.toLocaleString('es-MX');
+
+        evaluateStates(activeCount);
+    }
+
+    checkboxes.forEach(box => {
+        if (!box.classList.contains('checkin-exclusive') && 
+            !box.classList.contains('turndown-exclusive') && 
+            !box.classList.contains('set-exclusive') &&
+            box !== chkContenido && 
+            box !== chkExpDigital) {
+            box.addEventListener('change', calculateTotal);
+        }
+    });
+
+    function evaluateStates(activeCount) {
+        const magnoRect = magnoRow.getBoundingClientRect();
+        const isPastMagno = magnoRect.top <= (window.innerHeight - 45);
+
+        if (isPastMagno) {
+            stickyPill.classList.add('visible');
+        } else {
+            stickyPill.classList.remove('visible');
+        }
+
+        if (activeCount > 0) {
+            priceContainer.classList.add('visible');
+        } else {
+            priceContainer.classList.remove('visible');
+        }
+
+        const pillTop = stickyPill.getBoundingClientRect().top;
+        const triggerLine = pillTop - 5;
+
+        const checkinBottom = document.getElementById('checkin-section').getBoundingClientRect().bottom;
+        const turndownBottom = document.getElementById('turndown-section').getBoundingClientRect().bottom;
+        const editorialBottom = document.getElementById('editorial-section').getBoundingClientRect().bottom;
+        const digitalBottom = document.getElementById('digital-section').getBoundingClientRect().bottom;
+
+        let activeBg = 'checkin';
+        
+        if (digitalBottom <= triggerLine) {
+            activeBg = 'sets';
+        } else if (editorialBottom <= triggerLine) {
+            activeBg = 'digital';
+        } else if (turndownBottom <= triggerLine) {
+            activeBg = 'editorial';
+        } else if (checkinBottom <= triggerLine) {
+            activeBg = 'turndown';
+        }
+
+        document.querySelectorAll('.pill-bg').forEach(bg => bg.classList.remove('active'));
+        document.getElementById('bg-' + activeBg).classList.add('active');
+    }
+
+    window.addEventListener('scroll', () => {
+        let activeCount = 0;
+        checkboxes.forEach(box => { if (box.checked) activeCount++; });
+        evaluateStates(activeCount);
+    });
+
+    document.getElementById('stickyPill').addEventListener('click', () => {
+        const contactoSection = document.getElementById('contacto-section');
+        const elementPosition = contactoSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 120;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+
+    const btnToggleCheckout = document.getElementById('btn-toggle-checkout');
+    const expandForm = document.getElementById('expandable-checkout-form');
+    const actionWrapper = document.getElementById('actionWrapper');
+
+    btnToggleCheckout.addEventListener('click', () => {
+        if (!btnToggleCheckout.classList.contains('active')) {
+            actionWrapper.classList.remove('closing');
+            expandForm.classList.remove('closing');
+            
+            btnToggleCheckout.classList.add('active');
+            expandForm.classList.add('expanded');
+        } else {
+            actionWrapper.classList.add('closing');
+            expandForm.classList.add('closing');
+
+            btnToggleCheckout.classList.remove('active');
+            expandForm.classList.remove('expanded');
+        }
+    });
+
+    document.getElementById('send-btn').addEventListener('click', () => {
+        const nameInput = document.getElementById('client-name');
+        const emailInput = document.getElementById('client-email');
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const rooms = roomsInputTop.value;
+        const total = totalAmountSpan.textContent;
+
+        if (!name) {
+            alert('Por favor, ingresa tu nombre y apellido.');
+            nameInput.focus();
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+            alert('Por favor, ingresa un correo electrónico válido.');
+            emailInput.focus();
+            return;
+        }
+
+        let selectedServices = [];
+        checkboxes.forEach(box => {
+            if (box.checked) {
+                selectedServices.push(box.getAttribute('data-name'));
+            }
+        });
+
+        if (selectedServices.length === 0) {
+            alert('Selecciona al menos un servicio para generar la cotización.');
+            return;
+        }
+
+        const payload = {
+            nombre: name,
+            hotel: "Octavia Casa",
+            habitaciones: rooms,
+            emailContacto: email,
+            servicios: selectedServices,
+            totalMensual: total
+        };
+
+        console.log("Payload para Make:", payload);
+        alert('Cotización enviada con éxito. Nos pondremos en contacto a la brevedad.');
+    });
+</script>
+
+</body>
+</html>
